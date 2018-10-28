@@ -108,7 +108,6 @@ class Bluebillywig
         return $result;
     }
 
-
     /**
      * Request data from Bluebillywig
      * @param string $endpoint
