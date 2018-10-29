@@ -75,7 +75,7 @@ class BluebillywigTest extends TestCase
             $response = $bluebillywig->create('/mediaclip', [
                 'title' => $name,
                 'originalfilename' => $name . '.mov',
-                'sourceid' => '1234',
+                'sourceid' => $faker->Uuid,
                 'description' => $faker->text,
                 'author' => $faker->name,
                 'status' => 'published'
