@@ -26,11 +26,12 @@
     "require-dev": {
         "orchestra/testbench": "^3.7",
         "phpunit/phpunit": "^7",
-        "squizlabs/php_codesniffer": "^2.3"
+        "squizlabs/php_codesniffer": "^2.3",
+        "vlucas/phpdotenv": "^2.5"
     },
     "autoload": {
         "psr-4": {
-            "Tychovbh\\Bluebillywig\\": "src/"
+            "Tychovbh\\Bluebillywig\\": "src"
         },
         "files": [
             "src/Helpers/helpers.php"
@@ -38,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tychovbh\\Bluebillywig\\Tests\\": "src/"
+            "Tychovbh\\Tests\\Bluebillywig\\": "tests"
         }
     },
     "scripts": {

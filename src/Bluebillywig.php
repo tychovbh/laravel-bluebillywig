@@ -100,7 +100,6 @@ class Bluebillywig
         $res = $this->client->request($method, $request, array_merge($params, [
             'headers' => [
                 'rpctoken' => $this->id . '-' . $this->token($this->secret),
-                ''
             ]
         ]));
         $result = json_decode($res->getBody()->getContents(), true);
@@ -110,13 +109,13 @@ class Bluebillywig
     /**
      * Request data from Bluebillywig
      * @param string $endpoint
+     * @param array $params
      * @return mixed
-     * @throws \Exception
      * @throws GuzzleException
      */
-    public function retrieve(string $endpoint): array
+    public function retrieve(string $endpoint, array $params = []): array
     {
-        return $this->request($endpoint, 'GET');
+        return $this->request($endpoint, 'GET', ['query' => $params]);
     }
 
     /**
@@ -124,37 +123,36 @@ class Bluebillywig
      * @param string $endpoint
      * @param array $params
      * @return array
-     * @throws \Exception
      * @throws GuzzleException
      */
     public function create(string $endpoint, array $params = []): array
     {
-        return $this->request($endpoint, 'POST', $params);
+        return $this->request($endpoint, 'PUT', ['json' => $params]);
     }
 
     /**
      * Update data Bluebillywig
-     * @param int $id
+     * @param string $id
      * @param string $endpoint
      * @param array $params
      * @return array
      * @throws \Exception
      * @throws GuzzleException
      */
-    public function update(int $id, string $endpoint, array $params = []): array
+    public function update(string $id, string $endpoint, array $params = []): array
     {
-        return $this->request($endpoint . '/' . $id, 'PUT', $params);
+        return $this->request($endpoint . '/' . $id, 'PUT', ['json' => $params]);
     }
 
     /**
      * Delete data Bluebillywig
-     * @param int $id
+     * @param string $id
      * @param string $endpoint
      * @return array
      * @throws \Exception
      * @throws GuzzleException
      */
-    public function delete(int $id, string $endpoint): array
+    public function delete(string $id, string $endpoint): array
     {
         return $this->request($endpoint . '/' . $id, 'DELETE');
     }
