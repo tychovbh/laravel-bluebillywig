@@ -67,9 +67,8 @@ class Bluebillywig
 
         if (!$value) {
             throw new ConfigurationException(sprintf(
-                'Key {%s} missing in publication %s bluebillywig.php in configuration file!',
-                $key,
-                $this->publication
+                'Key {%s} missing in bluebillywig.php configuration file!',
+                $key
             ));
         }
 
