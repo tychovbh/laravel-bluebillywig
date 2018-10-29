@@ -67,7 +67,7 @@ class BluebillywigTest extends TestCase
      * @param Bluebillywig $bluebillywig
      * @return array
      */
-    public function itCanCreate(Bluebillywig $bluebillywig)
+    public function itCanCreate(Bluebillywig $bluebillywig) : array
     {
         try {
             $faker = \Faker\Factory::create();
