@@ -5,7 +5,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-Laravel Blue Billywig is created by, and is maintained by Tycho, and is a Laravel/Lumen package to connect with Blue Billywig Sapi. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/tychovbh/laravel-bluebillywig/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md)
+Laravel Blue Billywig is created by, and is maintained by Tycho, and is a Laravel/Lumen package to connect with Blue Billywig Sapi. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/tychovbh/laravel-bluebillywig/releases), [license](LICENSE.md), and [contribution guidelines](CONTRIBUTING.md)
 
 ## Install
 
