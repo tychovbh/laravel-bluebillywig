@@ -83,7 +83,7 @@ $response = $bluebillywig->create('/mediaclip', $formData)
 $response = $bluebillywig->update($id, '/mediaclip', $formData)
 $response = $bluebillywig->delete($id, '/mediaclip')
 
-// in this example we request data from blication. 
+// in this example we request data from my_publication. 
 // my_publication key should be added to publications in the confiugration file. 
 $response = $bluebillywig->publication('my_publication')->retrieve('/playlist')
 ```
@@ -110,9 +110,8 @@ You will need to handle Exceptions from Bluebillywig yourself:
 ``` php
 use Tychovbh\Bluebillywig\Exceptions\ConfigurationException;
 
-$bluebillywig = app('bluebillywig');
-
 try {
+    $bluebillywig = app('bluebillywig');
     $bluebillywig->retrieve('/endpoint')
 } catch(\ConfigurationException $exception) {
     echo $exception->getMessage();
