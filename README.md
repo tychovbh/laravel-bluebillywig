@@ -101,7 +101,7 @@ $response = $bluebillywig->create('/mediaclip', [
 ])
 
 // Update resource
-$response = $bluebillywig->create($id, '/mediaclip', [
+$response = $bluebillywig->update($id, '/mediaclip', [
     'title' => 'my fantastic new title',
 ])
 ```  
