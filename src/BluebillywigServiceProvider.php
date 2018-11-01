@@ -30,7 +30,7 @@ class BluebillywigServiceProvider extends ServiceProvider
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('bluebillywig.php')], 'laravel-bluebillywig');
         } elseif ($this->app instanceof LumenApplication) {
-            $this->app->configure('digitalocean');
+            $this->app->configure('bluebillywig');
         }
         $this->mergeConfigFrom($source, 'bluebillywig');
     }

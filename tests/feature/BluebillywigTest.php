@@ -54,6 +54,7 @@ class BluebillywigTest extends TestCase
             $this->assertArrayHasKey('items', $response);
             $this->assertArrayHasKey('numfound', $response);
             $this->assertLessThanOrEqual(2, $response['numfound']);
+            var_dump($response);
         } catch (\Exception $exception) {
             $this->assertTrue(false, $exception->getMessage());
         } catch (GuzzleException $exception) {
