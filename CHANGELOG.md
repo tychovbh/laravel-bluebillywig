@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V0.6 Alpha  01-11-2018
+
+- Update readme
+
 ## V0.5 Alpha  01-11-2018
 
 - Fix lumen configuration

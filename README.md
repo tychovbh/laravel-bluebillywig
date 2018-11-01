@@ -36,10 +36,7 @@ $ php artisan vendor:publish --tag=laravel-bluebillywig
 
 This will create a `config/bluebillywig.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
 
-In lumen you have to create the configuration file manually since `vendor:publish` is not available. Create the file `config/bluebillywig.php` and copy paste the [example file](https://github.com/tychovbh/laravel-bluebillywig/blob/master/config/bluebillywig.php). Don't forget to load the configuration file in `bootstrap/app.php`:
-```php
-$app->configure('bluebillywig');
-```  
+In lumen you have to create the configuration file manually since `vendor:publish` is not available. Create the file `config/bluebillywig.php` and copy paste the [example file](https://github.com/tychovbh/laravel-bluebillywig/blob/master/config/bluebillywig.php).
 
 There are two config options:
 
