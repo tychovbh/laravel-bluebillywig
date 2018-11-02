@@ -32,7 +32,6 @@ class BluebillywigServiceProvider extends ServiceProvider
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('bluebillywig');
         }
-        $this->mergeConfigFrom($source, 'bluebillywig');
     }
 
     /**
