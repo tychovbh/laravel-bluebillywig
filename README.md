@@ -5,7 +5,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-Laravel Blue Billywig is created by, and is maintained by Tycho, and is a Laravel/Lumen package to connect with Blue Billywig Sapi. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/tychovbh/laravel-bluebillywig/releases), [license](LICENSE.md), and [contribution guidelines](CONTRIBUTING.md)
+Laravel Blue Billywig is created by, and is maintained by Tycho, and is a Laravel/Lumen package to connect with Blue Billywig API. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/tychovbh/laravel-bluebillywig/releases), [license](LICENSE.md), and [contribution guidelines](CONTRIBUTING.md)
 
 ## Install
 
@@ -51,7 +51,7 @@ This option (`'publications'`) is where each of the publications are setup for y
 ## Usage
 
 ##### Bluebillywig
-This is the class of most interest. This will send authenticated requests to Blue Billywig Sapi. Go to their [documentation](https://support.bluebillywig.com/) for all available endpoints.
+This is the class of most interest. This will send authenticated requests to Blue Billywig API. Go to their [documentation](https://support.bluebillywig.com/) for all available endpoints.
  
 ##### Real Examples
 Instantiate Bluebillywig class:
@@ -60,14 +60,14 @@ use Tychovbh\Bluebillywig\Bluebillywig;
 
 // Use class injection
 Route::get('/bluebillywig', function(Bluebillywig $bluebillywig) {
-    $response = $bluebillywig->retrieve('/publication')
+    $response = $bluebillywig->retrieve('/sapi/publication')
     return response()->json($response)
 });
 
 // Or use Laravel helper app()
 Route::get('/bluebillywig', function() {
     $bluebillywig = app('bluebillywig');
-    $response = $bluebillywig->retrieve('/publication')
+    $response = $bluebillywig->retrieve('/sapi/publication')
     return response()->json($response)
 });
 ```
@@ -75,30 +75,34 @@ Route::get('/bluebillywig', function() {
 Available Bluebillywig methods:
 ``` php
 // The examples below use the default publication. 
-$response = $bluebillywig->retrieve('/mediaclip')
-$response = $bluebillywig->create('/mediaclip', $formData)
-$response = $bluebillywig->update($id, '/mediaclip', $formData)
-$response = $bluebillywig->delete($id, '/mediaclip')
+$response = $bluebillywig->retrieve('/sapi/mediaclip')
+$response = $bluebillywig->retrieve('/sapi/mediaclip/' . $id)
+$response = $bluebillywig->create('/sapi/mediaclip', $formData)
+$response = $bluebillywig->update($id, '/sapi/mediaclip', $formData)
+$response = $bluebillywig->delete($id, '/sapi/mediaclip')
 
 // in this example we request data from my_publication. 
 // my_publication key should be added to publications in the confiugration file. 
-$response = $bluebillywig->publication('my_publication')->retrieve('/playlist')
+$response = $bluebillywig->publication('my_publication')->retrieve('/sapi/playlist')
+
+// You can use other API endpoints like /json/mediaclip:
+$response = $bluebillywig>retrieve('/json/mediaclip')
 ```
 
 You can send parameters with some of the requests:
 ```php
 // Request with GET parameter 'limit=10'
-$response = $bluebillywig->retrieve('/mediaclip', [
+$response = $bluebillywig->retrieve('/sapi/mediaclip', [
     'limit' => 10
 ])
 
 // Create resource
-$response = $bluebillywig->create('/mediaclip', [
+$response = $bluebillywig->create('/sapi/mediaclip', [
     'title' => 'my fantastic new title',
 ])
 
 // Update resource
-$response = $bluebillywig->update($id, '/mediaclip', [
+$response = $bluebillywig->update($id, '/sapi/mediaclip', [
     'title' => 'my fantastic new title',
 ])
 ```  
@@ -109,7 +113,7 @@ use Tychovbh\Bluebillywig\Exceptions\ConfigurationException;
 
 try {
     $bluebillywig = app('bluebillywig');
-    $bluebillywig->retrieve('/endpoint')
+    $bluebillywig->retrieve('/sapi/mediaclip')
 } catch(\ConfigurationException $exception) {
     echo $exception->getMessage();
 } catch(\GuzzleException $exception) {

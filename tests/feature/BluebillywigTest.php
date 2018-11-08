@@ -29,7 +29,7 @@ class BluebillywigTest extends TestCase
     public function itCanRetrieveData(Bluebillywig $bluebillywig)
     {
         try {
-            $response = $bluebillywig->retrieve('/publication');
+            $response = $bluebillywig->retrieve('/sapi/publication');
             $this->assertEquals('active', $response['status']);
             $this->assertArrayHasKey('id', $response);
         } catch (\Exception $exception) {
@@ -47,14 +47,13 @@ class BluebillywigTest extends TestCase
     public function itCanRetrieveWithParams(Bluebillywig $bluebillywig)
     {
         try {
-            $response = $bluebillywig->retrieve('/mediaclip', [
+            $response = $bluebillywig->retrieve('/sapi/mediaclip', [
                 'limit' => 2,
             ]);
 
             $this->assertArrayHasKey('items', $response);
             $this->assertArrayHasKey('numfound', $response);
-            $this->assertLessThanOrEqual(2, $response['numfound']);
-            var_dump($response);
+            $this->assertLessThanOrEqual(2, count($response['items']));
         } catch (\Exception $exception) {
             $this->assertTrue(false, $exception->getMessage());
         } catch (GuzzleException $exception) {
@@ -73,7 +72,7 @@ class BluebillywigTest extends TestCase
         try {
             $faker = \Faker\Factory::create();
             $name = $faker->name;
-            $response = $bluebillywig->create('/mediaclip', [
+            $response = $bluebillywig->create('/sapi/mediaclip', [
                 'title' => $name,
                 'originalfilename' => $name . '.mov',
                 'sourceid' => $faker->Uuid,
@@ -106,7 +105,7 @@ class BluebillywigTest extends TestCase
         try {
             $faker = \Faker\Factory::create();
             $name = $faker->name;
-            $response = $bluebillywig->update($video['id'], '/mediaclip', [
+            $response = $bluebillywig->update($video['id'], '/sapi/mediaclip', [
                 'title' => $name,
             ]);
 
@@ -130,7 +129,7 @@ class BluebillywigTest extends TestCase
     public function itCanDelete(Bluebillywig $bluebillywig, array $video)
     {
         try {
-            $response = $bluebillywig->delete($video['id'], '/mediaclip');
+            $response = $bluebillywig->delete($video['id'], '/sapi/mediaclip');
 
             $this->assertArrayHasKey('code', $response);
             $this->assertEquals('200', $response['code']);

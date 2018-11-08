@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V0.8 Alpha  08-11-2018
+
+- Allow other API endpoints like json
+- Improve test cases
+
 ## V0.7 Alpha  02-11-2018
 
 - Don't merge example config

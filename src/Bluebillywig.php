@@ -96,7 +96,7 @@ class Bluebillywig
      */
     private function request(string $endpoint, string $method, array $params = []): array
     {
-        $request = sprintf('%s/sapi%s', $this->base_url, $endpoint);
+        $request = sprintf('%s%s', $this->base_url, $endpoint);
         $res = $this->client->request($method, $request, array_merge($params, [
             'headers' => [
                 'rpctoken' => $this->id . '-' . $this->token($this->secret),
