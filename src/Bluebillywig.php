@@ -132,27 +132,27 @@ class Bluebillywig
 
     /**
      * Update data Bluebillywig
-     * @param string $id
+     * @param int $id
      * @param string $endpoint
      * @param array $params
      * @return array
      * @throws \Exception
      * @throws GuzzleException
      */
-    public function update(string $id, string $endpoint, array $params = []): array
+    public function update(int $id, string $endpoint, array $params = []): array
     {
         return $this->request($endpoint . '/' . $id, 'PUT', ['json' => $params]);
     }
 
     /**
      * Delete data Bluebillywig
-     * @param string $id
+     * @param int $id
      * @param string $endpoint
      * @return array
      * @throws \Exception
      * @throws GuzzleException
      */
-    public function delete(string $id, string $endpoint): array
+    public function delete(int $id, string $endpoint): array
     {
         return $this->request($endpoint . '/' . $id, 'DELETE');
     }

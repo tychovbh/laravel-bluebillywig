@@ -105,7 +105,7 @@ class BluebillywigTest extends TestCase
         try {
             $faker = \Faker\Factory::create();
             $name = $faker->name;
-            $response = $bluebillywig->update($video['id'], '/sapi/mediaclip', [
+            $response = $bluebillywig->update((int)$video['id'], '/sapi/mediaclip', [
                 'title' => $name,
             ]);
 
@@ -129,7 +129,7 @@ class BluebillywigTest extends TestCase
     public function itCanDelete(Bluebillywig $bluebillywig, array $video)
     {
         try {
-            $response = $bluebillywig->delete($video['id'], '/sapi/mediaclip');
+            $response = $bluebillywig->delete((int)$video['id'], '/sapi/mediaclip');
 
             $this->assertArrayHasKey('code', $response);
             $this->assertEquals('200', $response['code']);
