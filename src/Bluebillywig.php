@@ -102,8 +102,7 @@ class Bluebillywig
                 'rpctoken' => $this->id . '-' . $this->token($this->secret),
             ]
         ]));
-        $result = json_decode($res->getBody()->getContents(), true);
-        return $result;
+        return json_decode($res->getBody()->getContents(), true) ?? [];
     }
 
     /**

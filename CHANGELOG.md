@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V0.9 Alpha  21-03-2018
+
+- Fix bug incorrect type being returned
+
 ## V0.8 Alpha  08-12-2018
 
 - Change ID type to integer for delete and update
