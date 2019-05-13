@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V1.0 Alpha  13-05-2018
+
+- Remove composer dependencies
+
 ## V0.9 Alpha  21-03-2018
 
 - Fix bug incorrect type being returned

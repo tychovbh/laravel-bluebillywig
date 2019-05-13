@@ -5,7 +5,6 @@ namespace Tychovbh\Tests\Bluebillywig\Feature;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Tychovbh\Bluebillywig\Bluebillywig;
-use Tychovbh\Tests\Bluebillywig\TestCase;
 
 class BluebillywigTest extends TestCase
 {
@@ -15,10 +14,7 @@ class BluebillywigTest extends TestCase
      */
     public function itCanInstantiate(): Bluebillywig
     {
-        $bluebillywig = app('bluebillywig');
-        $this->assertInstanceOf(Bluebillywig::class, $bluebillywig);
-
-        return $bluebillywig;
+        return $this->bluebillywig();
     }
 
     /**

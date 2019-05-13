@@ -82,7 +82,7 @@ class Bluebillywig
      */
     private function token(string $secret): string
     {
-        return \HOTP::generateByTime($secret, 120)->toString();
+        return \HOTP::generateByTime($secret, 120)->toHOTP(10);
     }
 
     /**
@@ -126,7 +126,7 @@ class Bluebillywig
      */
     public function create(string $endpoint, array $params = []): array
     {
-        return $this->request($endpoint, 'PUT', ['json' => $params]);
+        return $this->request($endpoint, 'POST', ['json' => $params]);
     }
 
     /**
