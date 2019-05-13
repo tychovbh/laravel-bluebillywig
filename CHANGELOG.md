@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V1.1 Alpha  13-05-2018
+
+- Allow more composer versions for Illuminate
+
 ## V1.0 Alpha  13-05-2018
 
 - Remove composer dependencies
