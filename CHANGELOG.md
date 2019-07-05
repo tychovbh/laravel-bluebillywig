@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V1.2 Alpha  05-07-2019
+
+- Add Test Case for Livestreams
+- Refactor delete switch ID with endpoint (more logically)
+- Refactor update method to choose where the ID is placed inside the endpoint
+- Update readme
+
 ## V1.1 Alpha  13-05-2018
 
 - Allow more composer versions for Illuminate

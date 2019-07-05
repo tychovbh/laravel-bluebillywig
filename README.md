@@ -78,8 +78,8 @@ Available Bluebillywig methods:
 $response = $bluebillywig->retrieve('/sapi/mediaclip')
 $response = $bluebillywig->retrieve('/sapi/mediaclip/' . $id)
 $response = $bluebillywig->create('/sapi/mediaclip', $formData)
-$response = $bluebillywig->update($id, '/sapi/mediaclip', $formData)
-$response = $bluebillywig->delete($id, '/sapi/mediaclip')
+$response = $bluebillywig->update('/sapi/mediaclip/{id}', $id, $formData)
+$response = $bluebillywig->delete('/sapi/mediaclip', $id)
 
 // in this example we request data from my_publication. 
 // my_publication key should be added to publications in the confiugration file. 
@@ -102,7 +102,7 @@ $response = $bluebillywig->create('/sapi/mediaclip', [
 ])
 
 // Update resource
-$response = $bluebillywig->update($id, '/sapi/mediaclip', [
+$response = $bluebillywig->update('/sapi/mediaclip/{id}', $id, [
     'title' => 'my fantastic new title',
 ])
 ```  
