@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-bluebillywig` will be documented in this file.
 
+## V1.3 Alpha  05-07-2019
+
+- Dont force string ID on update and destroy method, could be number or string
+
 ## V1.2 Alpha  05-07-2019
 
 - Add Test Case for Livestreams
